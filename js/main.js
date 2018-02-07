@@ -52,27 +52,15 @@ $(document).ready(function() {
 });
 
 function myLoop (s, f, action) {
-	// setTimeout(function () {
-	// 	action(s);
-	// 	if (s < f) {
-	// 		myLoop(++s, f, action)
-	// 	} else {
-	// 		// myLoop(0, char_count, action);
-	// 		var endTime = Date.now();
-	// 		console.log(endTime - startTime);
-	// 	}
-	// }, 1);
-
-
 	if (++s < f) {
 		action(s);
-		setZeroTimeout(function(){myLoop(s,f,action)});
+		setZeroTimeout(function(){
+			myLoop(s,f,action)
+		});
 	} else {
-		console.log("done");
-		var endTime = Date.now();
-		console.log(endTime - startTime);
+		// After loop finishes
+		myLoop(0, char_count, action)
 	}
-
 };
 
 function insertArtAt(x, y, dx, dy, element) {

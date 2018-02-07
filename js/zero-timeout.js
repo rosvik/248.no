@@ -1,4 +1,14 @@
-// Source: https://dbaron.org/log/20100309-faster-timeouts
+//
+//   setTimeout with a shorter delay
+//
+// https://dbaron.org/log/20100309-faster-timeouts
+//
+// Most browsers don't support a delay shorter than 10 milliseconds,
+// so by using window.postMessage(), you can get a shorter delay
+// that can run around 50 times faster.
+//
+
+
 // Only add setZeroTimeout to the window object, and hide everything
 // else in a closure.
 (function() {
