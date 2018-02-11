@@ -10,8 +10,11 @@ Most browsers don't support a delay shorter than 10 milliseconds, so by using so
 
 https://dbaron.org/log/20100309-faster-timeouts
 
+HTML5 Boilerplate
+https://html5boilerplate.com
+
 jQuery
 http://jquery.com
 
-HTML5 Boilerplate
-https://html5boilerplate.com
+Lettering.js
+http://letteringjs.com
