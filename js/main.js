@@ -38,7 +38,8 @@ $(document).ready(function() {
 	text_element.html('');
 	init_text = blank_char.repeat(line_length).repeat(text_height);
 	char_count = init_text.length;
-	text_element.html(init_text).lettering();
+	text_element.html(init_text);
+	text_element.lettering();
 
 	// Inititalize document (on every loop)
 	init_document();
@@ -47,6 +48,8 @@ $(document).ready(function() {
 	myLoop(0, char_count, function(i, x, y) {
 		setLetter(i, x, y);
 	});
+
+	$(window).resize(function(){onResize()});
 });
 
 
@@ -69,10 +72,14 @@ function myLoop (s, f, action) {
 	if (s <= f && (need_replace(s) || need_insert(s, x, y))) {
 
 		action(s, x, y);
-		// console.log("woo");
+
 		setZeroTimeout(function(){
 			myLoop(s,f,action);
 		});
+		// setTimeout(function(){
+		// 	myLoop(s,f,action);
+		// }, 20);
+
 	} else if (s <= f) {
 		myLoop(s,f,action);
 	} else if (s > f) {
@@ -111,6 +118,7 @@ function myLoop (s, f, action) {
 */
 function init_document() {
 	// Calculate variables
+	// text_element.lettering();
 	line_length = get_line_length(text_element);
 	art_line_lenght = hello.indexOf("\n")+1;
 	art_line_count = (hello.match(/\n/g) || []).length+1;
@@ -172,4 +180,25 @@ function setLetter(i, x, y) {
 			element.css('color', 'inherit');
 		}
 	}
+}
+
+function onResize() {
+	// Find new values
+	var new_line_length = get_line_length(text_element);
+	var new_char_count = new_line_length*text_height;
+	var delta_chars = new_char_count - char_count;
+
+	// Stop if there needs to be made no changes
+	if(new_line_length == line_length) return;
+
+	// Add or remove characters
+	if (delta_chars > 0) { // Window bigger -> more characters
+		text_element.append(blank_char.repeat(delta_chars)).lettering();
+	} else if (delta_chars < 0) { // Window smaller -> less characters
+		text_element.children().slice(delta_chars).remove();
+	}
+
+	// Set new sizes
+	char_count = new_char_count;
+	line_length = new_line_length;
 }
