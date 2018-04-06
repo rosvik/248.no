@@ -194,6 +194,7 @@ function onResize() {
 	// Add or remove characters
 	if (delta_chars > 0) { // Window bigger -> more characters
 		text_element.append(blank_char.repeat(delta_chars)).lettering();
+		text_element.children().not(":contains('0')").css('color', 'white');
 	} else if (delta_chars < 0) { // Window smaller -> less characters
 		text_element.children().slice(delta_chars).remove();
 	}
