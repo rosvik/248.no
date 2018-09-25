@@ -3,11 +3,7 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
+    Johannes Tomren Røsvik -- Web development and design -- https://twitter.com/roesvik
 
 # TECHNOLOGY COLOPHON
 
