@@ -1,13 +1,17 @@
 body {
 	background-color: white;
+	border-top: 2px solid rgb(241,87,92);
 }
+
+::selection { background-color: #eb9194; color: white;}
+::-moz-selection { background-color: #eb9194; color: white;}
 
 h1 {
 	font-family: 'Playfair Display';
 	padding: 0 0 .2em 0;
 	margin: 0;
 	font-style: italic;
-	font-weight: 900;
+	font-weight: 400;
 }
 
 a {
@@ -33,7 +37,8 @@ p {
 }
 
 a:hover {
-	color: red;
+	/* color: white; */
+	background-color: rgb(241,87,92);
 }
 
 p, a, span, h1, h2, h3, h4, h5, h6 {
@@ -73,6 +78,7 @@ nav {
 nav a {
 	margin-right: 20px;
 	padding-left: 0;
+	line-height: 2em; /* For vertical alignment */
 }
 
 .bg_logo {
@@ -81,9 +87,10 @@ nav a {
 
 
 div#about {
-	max-width: 675px;
+	width: 50vw;
+	max-width: 920px;
 	margin: 0 10% 0 10%;
-	padding-top: 40vh;
+	padding-top: 50vh;
 }
 
 div#profile {
@@ -91,6 +98,7 @@ div#profile {
 	flex-direction: column;
 	position: absolute;
 	width: 50vw;
+	max-width: 920px;
 	height: 100%;
 	top: 0;
 	right: 10%;
@@ -101,7 +109,8 @@ div#profile {
 div#profile div {
 	max-height: 90vh;
 	min-height: 500px;
-	max-width: 50vw;
+	width: 50vw;
+	max-width: 920px;
 	overflow: hidden;
 }
 
@@ -113,4 +122,5 @@ div#profile div img {
 
 section#intro {
 	height: 100vh;
+	max-width: 1400px;
 }
