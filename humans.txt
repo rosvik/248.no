@@ -3,9 +3,9 @@
 
 # TEAM
 
-    Johannes Tomren Røsvik -- Web development and design -- https://twitter.com/roesvik
+    Johannes Tomren Røsvik -- Web development and design -- https://248.no
 
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    NGINX, jQuery, Modernizr, Normalize.css
