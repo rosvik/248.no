@@ -1,15 +1,31 @@
 body {
 	background-color: white;
-	border-top: 2px solid rgb(241,87,92);
+	border-top: 3px solid #00ffcc;
 }
 
-::selection { background-color: #eb9194; color: white;}
-::-moz-selection { background-color: #eb9194; color: white;}
+::selection { background-color: #00ffcc; color: black;}
+::-moz-selection { background-color: #00ffcc; color: black;}
+
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Playfair Display';
+	font-style: italic;
+	font-weight: 900;
+	margin: 0;
+}
 
 h1 {
+	font-size: 9vw;
+	color: black;
+	text-align: center;
+	margin: 0 0 -.15em 0;
+	z-index: 3;
+	position: relative;
+}
+
+h2 {
 	font-family: 'Playfair Display';
 	padding: 0 0 .2em 0;
-	margin: 0;
 	font-style: italic;
 	font-weight: 400;
 }
@@ -38,7 +54,7 @@ p {
 
 a:hover {
 	/* color: white; */
-	background-color: rgb(241,87,92);
+	background-color: #00ffcc;
 }
 
 p, a, span, h1, h2, h3, h4, h5, h6 {
@@ -121,6 +137,23 @@ div#profile div img {
 
 
 section#intro {
-	height: 100vh;
+	height: 95vh;
 	max-width: 1400px;
+}
+
+section#portfolio {
+	background-color: white;
+	padding: 0 0 100vh 0;
+}
+
+.portfolio_grid {
+	display: grid;
+	width: 70%;
+	grid-template-columns: repeat(auto-fit, minmax(30vh, 1fr));
+	margin: auto;
+}
+
+.portfolio_grid img {
+	max-width: 100%;
+	margin: auto;
 }
