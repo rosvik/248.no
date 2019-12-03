@@ -3,18 +3,9 @@
 # Webpage for 248
 https://248.no
 
-## Credits
+This is just a simple landing page for my website, 248.no. There are some more exciting but unfinished projects hiding on other branches, so that's why there is a repo at all.
 
-### setTimeout with a shorter delay
-Most browsers don't support a delay shorter than 10 milliseconds, so by using some magic hack with `window.postMessage()`, you can get a shorter delay that can run around 50 times faster. On my page it makes the cursor run about twice as fast as `setTimeout(func, 0)` would.
+I have pubished some small projects on a couple of subdomains, so please check them out.
 
-https://dbaron.org/log/20100309-faster-timeouts
-
-HTML5 Boilerplate
-https://html5boilerplate.com
-
-jQuery
-http://jquery.com
-
-Lettering.js
-http://letteringjs.com
+- [rosvik/string.248.no](https://github.com/rosvik/string.248.no)
+- [rosvik/cve.248.no](https://github.com/rosvik/cve.248.no)
