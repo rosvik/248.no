@@ -1,4 +1,4 @@
-![qore logo](https://qore.no/res/logo-text-100.png)
+<img src="docs/248-logo.svg" width="150" alt="248">
 
 # Webpage for 248
 https://248.no
