@@ -147,7 +147,6 @@ function myLoop(s, f, action) {
 */
 function init_document() {
     // Calculate variables
-    // text_element.lettering();
     line_length = get_line_length(text_element);
     art_line_lenght = hello.indexOf("\n") + 1;
     art_line_count = (hello.match(/\n/g) || []).length + 1;
