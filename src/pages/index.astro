@@ -1,7 +1,8 @@
 ---
-const date = new Date().toISOString();
-const hash = process.env.COMMIT_HASH;
-const cf_hash = process.env.CF_PAGES_COMMIT_SHA;
+const date = new Date().toUTCString();
+const hash = process.env.COMMIT_HASH || process.env.CF_PAGES_COMMIT_SHA;
+const hash_text = hash ? ` (commit ${hash})` : '';
+const year = new Date().getFullYear();
 ---
 
 <html lang="en">
@@ -10,14 +11,40 @@ const cf_hash = process.env.CF_PAGES_COMMIT_SHA;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>248.no</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
-		<p>{date}</p>
-		<p>Local hash</p>
-		<p>{hash}</p>
-		<p>CF hash</p>
-		<p>{cf_hash}</p>
+<pre>
+{date}
+
+Welcome to 248.no{hash_text}
+
+  248.no is a directory of projects maintained (and not maintained) by
+   Johannes Røsvik. All of these projects are open source, libre licensed, and
+	 very much open for contributions.
+
+  * GitHub:    <a href="https://github.com/rosvik">@rosvik</a>
+  * Mastodon:  <a href="https://mastodon.social/@rosvik">@rosvik@mastodon.social</a>
+  * Email:     <a href="mailto:johannes@konstruktivkritikk.no">Johannes Røsvik &#60;johannes@konstruktivkritikk.no&#62</a>
+  * LinkedIn:  <a href="https://www.linkedin.com/in/rosvik/">@Johannes Røsvik</a>
+
+🄯 Copyleft 2018-{year} Johannes Røsvik (The Unlicense).
+
+$ tree
+./
+├── <a href="https://string.248.no">string.248.no/</a>
+│   │   "A static string analyzer"
+│   └── <a href="github.com/rosvik/string.248.no">github.com/rosvik/string.248.no</a>
+├── <a href="https://cve.248.no">cve.248.no/</a>
+│   │   "A CVE lookup service"
+│   └── <a href="https://github.com/rosvik/cve.248.no">github.com/rosvik/cve.248.no</a>
+├── <a href="https://ip.248.no">ip.248.no/</a>
+│   │   "A super simple site that returns your ip address"
+│   └── <a href="https://github.com/rosvik/ip.248.no">github.com/rosvik/ip.248.no</a>
+└── <a href="https://http.248.no">http.248.no/</a>
+    │   "A super simple site that returns incoming http headers"
+    └── <a href="https://github.com/rosvik/http.248.no">github.com/rosvik/http.248.no</a>
+
+</pre>
 	</body>
 </html>

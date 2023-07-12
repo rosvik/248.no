@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly COMMIT_HASH: string;
+  readonly CF_PAGES_COMMIT_SHA: string;
 }
 
 interface ImportMeta {
