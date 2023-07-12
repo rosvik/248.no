@@ -4,9 +4,10 @@
   --secondary-text: rgb(145, 145, 145);
 	--accent: #fcee54;
   --secondary-accent: #85eea7;
-	::selection {
-		background: #85eea7;
-	}
+}
+::selection {
+	background: #85eea7;
+	color: var(--background);
 }
 html {
 	background-color: var(--background);

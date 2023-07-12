@@ -1,21 +1,10 @@
 ---
-const hash = process.env.COMMIT_HASH || process.env.CF_PAGES_COMMIT_SHA;
+import { getIP } from "../utils";
+const hash = process.env.CF_PAGES_COMMIT_SHA || process.env.COMMIT_HASH;
 const date = new Date().toUTCString();
 const year = new Date().getFullYear();
-const ip =
-  Astro.request.headers.get("x-forwarded-for") ||
-  Astro.request.headers.get("cf-connecting-ip") ||
-  Astro.request.headers.get("x-real-ip") ||
-  Astro.request.headers.get("x-client-ip") ||
-  Astro.request.headers.get("x-cluster-client-ip") ||
-  Astro.request.headers.get("x-forwarded") ||
-  Astro.request.headers.get("forwarded-for") ||
-  Astro.request.headers.get("forwarded") ||
-  Astro.request.headers.get("via") ||
-  Astro.request.headers.get("remote_addr") ||
-  "UNKNOWN";
+const ip = getIP(Astro.request);
 const host = Astro.request.headers.get("host");
-console.log(Astro.request.headers);
 ---
 
 <html lang="en">
