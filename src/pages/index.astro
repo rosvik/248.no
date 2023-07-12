@@ -1,52 +1,80 @@
 ---
-const date = new Date().toUTCString();
 const hash = process.env.COMMIT_HASH || process.env.CF_PAGES_COMMIT_SHA;
-const hash_text = hash ? ` (commit ${hash})` : '';
+const date = new Date().toUTCString();
 const year = new Date().getFullYear();
+const ip =
+  Astro.request.headers.get("x-forwarded-for") ||
+  Astro.request.headers.get("cf-connecting-ip") ||
+  Astro.request.headers.get("x-real-ip") ||
+  Astro.request.headers.get("x-client-ip") ||
+  Astro.request.headers.get("x-cluster-client-ip") ||
+  Astro.request.headers.get("x-forwarded") ||
+  Astro.request.headers.get("forwarded-for") ||
+  Astro.request.headers.get("forwarded") ||
+  Astro.request.headers.get("via") ||
+  Astro.request.headers.get("remote_addr") ||
+  "UNKNOWN";
+const host = Astro.request.headers.get("host");
+console.log(Astro.request.headers);
 ---
 
 <html lang="en">
-	<head>
+  <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/fonts/fonts.css" />
     <link rel="stylesheet" href="/style.css" />
     <meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>248.no</title>
-	</head>
-	<body>
-<pre>
+    <meta name="generator" content={Astro.generator} />
+    <title>248.no</title>
+  </head>
+  <body>
+    <pre>
+
 {date}
+{ip ? (
+  <>Serving {host} to {ip}</>
+) : ''}
+{hash ? (
+  <>On commit <a href={`https://github.com/rosvik/248.no/commit/${hash}`}>{hash}</a></>
+) : ''}
 
-Welcome to 248.no{hash_text}
 
-  248.no is a directory of projects maintained (and not maintained) by
-   Johannes Røsvik. All of these projects are open source, libre licensed, and
-	 very much open for contributions.
+<span>Welcome to 248.no!</span>
 
-  * GitHub:    <a href="https://github.com/rosvik">@rosvik</a>
-  * Mastodon:  <a href="https://mastodon.social/@rosvik">@rosvik@mastodon.social</a>
-  * Email:     <a href="mailto:johannes@konstruktivkritikk.no">Johannes Røsvik &#60;johannes@konstruktivkritikk.no&#62</a>
-  * LinkedIn:  <a href="https://www.linkedin.com/in/rosvik/">@Johannes Røsvik</a>
-
-🄯 Copyleft 2018-{year} Johannes Røsvik (The Unlicense).
-
-$ tree
-./
-├── <a href="https://string.248.no">string.248.no/</a>
+├ <span>248.no is a collection of projects that are maintained (to some degree) by</span>
+│  <span>Johannes Røsvik. All of these projects are open source, libre licensed, and </span>
+│  <span>very much welcome to contributions.</span>
+│
+│
+├── <span><a href="https://string.248.no">string.248.no/</a></span>
 │   │   "A static string analyzer"
 │   └── <a href="github.com/rosvik/string.248.no">github.com/rosvik/string.248.no</a>
-├── <a href="https://cve.248.no">cve.248.no/</a>
+│
+├── <span><a href="https://cve.248.no">cve.248.no/</a></span>
 │   │   "A CVE lookup service"
 │   └── <a href="https://github.com/rosvik/cve.248.no">github.com/rosvik/cve.248.no</a>
-├── <a href="https://ip.248.no">ip.248.no/</a>
+│
+├── <span><a href="https://ip.248.no">ip.248.no/</a></span>
 │   │   "A super simple site that returns your ip address"
 │   └── <a href="https://github.com/rosvik/ip.248.no">github.com/rosvik/ip.248.no</a>
-└── <a href="https://http.248.no">http.248.no/</a>
+│
+└── <span><a href="https://http.248.no">http.248.no/</a></span>
     │   "A super simple site that returns incoming http headers"
     └── <a href="https://github.com/rosvik/http.248.no">github.com/rosvik/http.248.no</a>
 
+
+<span>You can reach out on</span>
+
+ * <span>GitHub</span>:    <a href="https://github.com/rosvik">@rosvik</a>
+ * <span>Mastodon</span>:  <a href="https://mastodon.social/@rosvik">@rosvik@mastodon.social</a>
+ * <span>Email</span>:     <a href="mailto:johannes@konstruktivkritikk.no">Johannes Røsvik &#60;johannes@konstruktivkritikk.no&#62</a>
+ * <span>LinkedIn</span>:  <a href="https://www.linkedin.com/in/rosvik/">@Johannes Røsvik</a>
+
+
+Copyleft 2018-{year} Johannes Røsvik (The Unlicense).
+
+EOF
 </pre>
-	</body>
+  </body>
 </html>
