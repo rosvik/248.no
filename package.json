@@ -1,0 +1,19 @@
+{
+  "name": "248",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "COMMIT_HASH=\"$(git rev-parse --short HEAD)\" astro dev --hash=test",
+    "start": "COMMIT_HASH=\"$(git rev-parse --short HEAD)\" astro dev --hash=test",
+    "build": "COMMIT_HASH=\"$(git rev-parse --short HEAD)\" astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^6.6.0",
+    "astro": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.1"
+  }
+}

@@ -1,0 +1,35 @@
+* {
+  --background: #1c1e27;
+	--text: #fff;
+  --secondary-text: rgb(145, 145, 145);
+	--accent: #fcee54;
+  --secondary-accent: #85eea7;
+}
+::selection {
+	background: #85eea7;
+	color: var(--background);
+}
+html {
+	background-color: var(--background);
+	color: var(--text);
+	font-family: 'Berkeley Mono', 'JetBrains Mono';
+}
+pre {
+	width: 60ch;
+	margin: auto;
+	color: var(--secondary-text);
+}
+span {
+	color: var(--text);
+}
+a {
+	color: inherit;
+	text-decoration: underline;
+  text-decoration-color: var(--secondary-text);
+}
+a:hover {
+	color: var(--accent);
+}
+a:active {
+	color: var(--secondary-accent);
+}
