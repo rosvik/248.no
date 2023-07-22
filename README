@@ -1,0 +1,41 @@
+Welcome to 248.no!
+
+├ 248.no is a collection of projects that are maintained (to
+│  some degree) by Johannes Røsvik. All of these projects
+│  are open source, libre licensed, and very much accepting
+│  contributions!
+│
+│
+├── string.248.no/
+│   │   "A static string analyzer"
+│   └── github.com/rosvik/string.248.no
+│
+├── cve.248.no/
+│   │   "A CVE lookup service"
+│   └── github.com/rosvik/cve.248.no
+│
+├── ip.248.no/
+│   │   "A super simple site that returns your ip address"
+│   └── github.com/rosvik/ip.248.no
+│
+├── http.248.no/
+│   │   "A super simple site that returns incoming http
+│   │    headers"
+│   └── github.com/rosvik/http.248.no
+│
+└── img.248.no/
+    │   "An API for image conversion and resizing"
+    └── github.com/rosvik/image-loader
+
+
+You can reach out on
+
+ * GitHub:    @rosvik
+ * Mastodon:  @rosvik@mastodon.social
+ * Email:     johannes@konstruktivkritikk.no
+ * LinkedIn:  @Johannes Røsvik
+
+
+Copyleft 2018-2023 Johannes Røsvik (The Unlicense).
+
+EOF
