@@ -15,7 +15,7 @@ html {
 	font-family: 'Berkeley Mono', 'JetBrains Mono';
 }
 pre {
-	width: 80ch;
+	width: 60ch;
 	margin: auto;
 	color: var(--secondary-text);
 }

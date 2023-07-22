@@ -20,20 +20,21 @@ const host = Astro.request.headers.get("host");
   <body>
     <pre>
 
-{date}
-{ip ? (
+ {date}
+{(ip && host) && (
   <>Serving {host} to {ip}</>
-) : ''}
-{hash ? (
+)}
+{hash && (
   <>On commit <a href={`https://github.com/rosvik/248.no/commit/${hash}`}>{hash}</a></>
-) : ''}
+)}
 
 
 <span>Welcome to 248.no!</span>
 
-├ <span>248.no is a collection of projects that are maintained (to some degree) by</span>
-│  <span>Johannes Røsvik. All of these projects are open source, libre licensed, and </span>
-│  <span>very much welcome to contributions.</span>
+├ <span>248.no is a collection of projects that are maintained (to</span>
+│  <span>some degree) by Johannes Røsvik. All of these projects</span>
+│  <span>are open source, libre licensed, and very much accepting</span>
+│  <span>contributions!</span>
 │
 │
 ├── <span><a href="https://string.248.no">string.248.no/</a></span>
@@ -49,7 +50,8 @@ const host = Astro.request.headers.get("host");
 │   └── <a href="https://github.com/rosvik/ip.248.no">github.com/rosvik/ip.248.no</a>
 │
 └── <span><a href="https://http.248.no">http.248.no/</a></span>
-    │   "A super simple site that returns incoming http headers"
+    │   "A super simple site that returns incoming http
+    │    headers"
     └── <a href="https://github.com/rosvik/http.248.no">github.com/rosvik/http.248.no</a>
 
 
@@ -57,7 +59,7 @@ const host = Astro.request.headers.get("host");
 
  * <span>GitHub</span>:    <a href="https://github.com/rosvik">@rosvik</a>
  * <span>Mastodon</span>:  <a href="https://mastodon.social/@rosvik">@rosvik@mastodon.social</a>
- * <span>Email</span>:     <a href="mailto:johannes@konstruktivkritikk.no">Johannes Røsvik &#60;johannes@konstruktivkritikk.no&#62</a>
+ * <span>Email</span>:     <a href="mailto:johannes@konstruktivkritikk.no">johannes@konstruktivkritikk.no</a>
  * <span>LinkedIn</span>:  <a href="https://www.linkedin.com/in/rosvik/">@Johannes Røsvik</a>
 
 
