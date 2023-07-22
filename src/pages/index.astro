@@ -20,7 +20,7 @@ const host = Astro.request.headers.get("host");
   <body>
     <pre>
 
- {date}
+{date}
 {(ip && host) && (
   <>Serving {host} to {ip}</>
 )}
@@ -49,10 +49,14 @@ const host = Astro.request.headers.get("host");
 │   │   "A super simple site that returns your ip address"
 │   └── <a href="https://github.com/rosvik/ip.248.no">github.com/rosvik/ip.248.no</a>
 │
-└── <span><a href="https://http.248.no">http.248.no/</a></span>
-    │   "A super simple site that returns incoming http
-    │    headers"
-    └── <a href="https://github.com/rosvik/http.248.no">github.com/rosvik/http.248.no</a>
+├── <span><a href="https://http.248.no">http.248.no/</a></span>
+│   │   "A super simple site that returns incoming http
+│   │    headers"
+│   └── <a href="https://github.com/rosvik/http.248.no">github.com/rosvik/http.248.no</a>
+│
+└── <span><a href="https://img.248.no">img.248.no/</a></span>
+    │   "An API for image conversion and resizing"
+    └── <a href="https://github.com/rosvik/image-loader">github.com/rosvik/image-loader</a>
 
 
 <span>You can reach out on</span>
