@@ -23,12 +23,13 @@ Welcome to 248.no!
 │   │    headers"
 │   └── github.com/rosvik/http.248.no
 │
-└── img.248.no/
-    │   "An API for image conversion and resizing"
-    └── github.com/rosvik/image-loader
-
-
-You can reach out on
+├── img.248.no/
+│   │   "A site and API for image conversion and resizing"
+│   └── github.com/rosvik/img.248.no
+│
+└── qr.248.no/
+    │   "A site for generating QR codes"
+    └── github.com/rosvik/qr.248.no
 
  * GitHub:    @rosvik
  * Mastodon:  @rosvik@mastodon.social
