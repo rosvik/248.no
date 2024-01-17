@@ -6,7 +6,7 @@
   --secondary-accent: #85eea7;
 }
 ::selection {
-	background: #85eea7;
+	background: var(--secondary-accent);
 	color: var(--background);
 }
 html {
