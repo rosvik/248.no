@@ -1,34 +1,4 @@
----
-import { getIP } from "../utils";
-const hash = process.env.CF_PAGES_COMMIT_SHA || process.env.COMMIT_HASH;
-const date = new Date().toUTCString();
-const year = new Date().getFullYear();
-const ip = getIP(Astro.request);
-const host = Astro.request.headers.get("host");
----
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="/fonts/fonts.css" />
-    <link rel="stylesheet" href="/style.css" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>248.no</title>
-  </head>
-  <body>
-    <pre>
-
-{date}
-{(ip && host) && (
-  <>Serving {host} to {ip}</>
-)}
-{hash && (
-  <>On commit <a href={`https://github.com/rosvik/248.no/commit/${hash}`}>{hash}</a></>
-)}
-
-
+<pre>
 <span>Welcome to 248.no!</span>
 
 ├ <span>248.no is a collection of projects that are maintained (to</span>
@@ -67,13 +37,8 @@ const host = Astro.request.headers.get("host");
 
  * <span>GitHub</span>:    <a href="https://github.com/rosvik">@rosvik</a>
  * <span>Mastodon</span>:  <a href="https://mastodon.social/@rosvik">@rosvik@mastodon.social</a>
- * <span>Email</span>:     <a href="mailto:johannes@konstruktivkritikk.no">johannes@konstruktivkritikk.no</a>
+ * <span>Email</span>:     <a href="mailto:johannes@konstruktivkritikk.no"
+    >johannes@konstruktivkritikk.no</a
+  >
  * <span>LinkedIn</span>:  <a href="https://www.linkedin.com/in/rosvik/">@Johannes Røsvik</a>
-
-
-Copyleft 2018-{year} Johannes Røsvik (<a href="https://github.com/rosvik/248.no/blob/master/LICENSE">AGPL-3.0</a>).
-
-EOF
 </pre>
-  </body>
-</html>

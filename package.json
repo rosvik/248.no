@@ -1,19 +1,34 @@
 {
-  "name": "248",
-  "type": "module",
+  "name": "248.no",
   "version": "0.0.1",
   "scripts": {
-    "dev": "COMMIT_HASH=\"$(git rev-parse --short HEAD)\" astro dev --hash=test",
-    "start": "COMMIT_HASH=\"$(git rev-parse --short HEAD)\" astro dev --hash=test",
-    "build": "COMMIT_HASH=\"$(git rev-parse --short HEAD)\" astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/cloudflare": "^6.6.0",
-    "astro": "^2.8.1"
+    "dev": "COMMIT_HASH=$(git rev-parse --short HEAD) vite dev",
+    "build": "vite build",
+    "preview": "COMMIT_HASH=$(git rev-parse --short HEAD) vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write ."
   },
   "devDependencies": {
-    "@types/node": "^20.4.1"
-  }
+    "@fontsource/fira-mono": "^4.5.10",
+    "@neoconfetti/svelte": "^1.0.0",
+    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@types/eslint": "8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.35.1",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "svelte": "^4.2.7",
+    "svelte-check": "^3.6.0",
+    "tslib": "^2.4.1",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.3"
+  },
+  "type": "module"
 }
