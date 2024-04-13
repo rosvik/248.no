@@ -1,9 +1,9 @@
 import { defineConfig } from "astro/config";
 
-import cloudflare from "@astrojs/cloudflare";
-
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://248.no',
+  base: "/",
   output: "server",
-  adapter: cloudflare(),
+  trailingSlash: "ignore",
 });
