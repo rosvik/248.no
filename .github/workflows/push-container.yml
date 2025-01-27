@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - master
-      - rosvik/svelte-rewrite
 
 jobs:
   podman-build:
@@ -14,8 +13,6 @@ jobs:
       - name: Get commit hash
         id: hash
         run: echo "hash=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-      - name: Check outputs
-        run: echo ${{ steps.hash.outputs.hash }}
 
       # Setup for multi architecture build
       - name: Install QEMU
