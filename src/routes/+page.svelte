@@ -40,7 +40,7 @@
 <span>You can reach out on</span>
 
  * <span>GitHub</span>:    <a href="https://github.com/rosvik">@rosvik</a>
- * <span>Mastodon</span>:  <a href="https://mastodon.social/@rosvik">@rosvik@mastodon.social</a>
+ * <span>Bluesky</span>:   <a href="https://bsky.app/profile/rosvik.co">@rosvik.co</a>
  * <span>Email</span>:     <a href="mailto:johannes@konstruktivkritikk.no"
     >johannes@konstruktivkritikk.no</a
   >
