@@ -2,7 +2,7 @@ name: Push Container
 on:
   push:
     branches:
-      - master
+      - '*'
 jobs:
   get-commit-hash:
     name: Get Commit Hash
@@ -16,7 +16,7 @@ jobs:
         run: echo "hash=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
   push-container:
     name: Push Container
-    uses: rosvik/workflows/.github/workflows/push-container.yml@main
+    uses: rosvik/workflows/.github/workflows/push-container.yml@staging
     needs: get-commit-hash
     with:
       containerfile: Containerfile
