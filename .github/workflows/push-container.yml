@@ -16,7 +16,7 @@ jobs:
         run: echo "hash=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
   push-container:
     name: Push Container
-    uses: rosvik/workflows/.github/workflows/push-container.yml@staging
+    uses: rosvik/workflows/.github/workflows/push-container.yml@main
     needs: get-commit-hash
     with:
       containerfile: Containerfile
