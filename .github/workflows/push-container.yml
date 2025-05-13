@@ -24,7 +24,7 @@ jobs:
       tag: ${{ github.ref_name }} # git tag or short branch name
       registry_url: cubby.no
       registry_username: ${{ vars.REGISTRY_USER }}
-      build-args: |
+      build_args: |
         COMMIT_HASH=${{ needs.get-commit-hash.outputs.hash }}
     secrets:
       registry_password: ${{ secrets.REGISTRY_PASSWORD }}
