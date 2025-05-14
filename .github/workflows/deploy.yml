@@ -1,4 +1,4 @@
-name: Push Container
+name: Deploy
 on:
   push:
     branches:
@@ -19,9 +19,7 @@ jobs:
     uses: rosvik/workflows/.github/workflows/push-container.yml@main
     needs: get-commit-hash
     with:
-      containerfile: Containerfile
       image: rosvik/248.no
-      tag: ${{ github.ref_name }} # git tag or short branch name
       registry_url: cubby.no
       registry_username: ${{ vars.REGISTRY_USER }}
       build_args: |
