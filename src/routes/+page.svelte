@@ -17,7 +17,7 @@
 │
 ├── <span><a href="https://ip.248.no">ip.248.no/</a></span>
 │   │   "A super simple site that returns your ip address"
-│   └── <a href="https://github.com/rosvik/ip.248.no">github.com/rosvik/ip.248.no</a>
+│   └── <a href="https://github.com/rosvik/tiny-ip">github.com/rosvik/tiny-ip</a>
 │
 ├── <span><a href="https://http.248.no">http.248.no/</a></span>
 │   │   "A super simple site that returns incoming http

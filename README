@@ -16,7 +16,7 @@ Welcome to 248.no!
 │
 ├── ip.248.no/
 │   │   "A super simple site that returns your ip address"
-│   └── github.com/rosvik/ip.248.no
+│   └── github.com/rosvik/tiny-ip
 │
 ├── http.248.no/
 │   │   "A super simple site that returns incoming http
