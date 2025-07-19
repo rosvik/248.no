@@ -37,7 +37,7 @@ need to treat every HTTP request as a new opportunity to
 learn and grow.
 
 Of course, it is quite possible that you mistyped the URL,
-which is an common mistake anyone can make. So if that's the
+which is a common mistake anyone can make. So if that's the
 case, there's no need to feel bad about it. Either way,
 we're sorry for the inconvenience, and hope you have a great
 rest of your day :)
