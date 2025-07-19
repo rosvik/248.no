@@ -28,6 +28,12 @@ EOF
 </pre>
 
 <style>
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
   :global(*) {
     --background: #1c1e27;
     --text: #fff;
