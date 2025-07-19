@@ -11,10 +11,6 @@
 │   │   "A static string analyzer"
 │   └── <a href="https://github.com/rosvik/string.248.no">github.com/rosvik/string.248.no</a>
 │
-├── <span><a href="https://cve.248.no">cve.248.no/</a></span>
-│   │   "A CVE lookup service"
-│   └── <a href="https://github.com/rosvik/cve.248.no">github.com/rosvik/cve.248.no</a>
-│
 ├── <span><a href="https://ip.248.no">ip.248.no/</a></span>
 │   │   "A super simple site that returns your ip address"
 │   └── <a href="https://github.com/rosvik/tiny-ip">github.com/rosvik/tiny-ip</a>
