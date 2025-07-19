@@ -16,7 +16,10 @@ const config = {
         include: ['/*'],
         exclude: ['<all>']
       }
-    })
+    }),
+    // Maximum length of CSS to be inlined
+    // https://svelte.dev/docs/kit/configuration#inlineStyleThreshold
+    inlineStyleThreshold: 100000
   }
 };
 
