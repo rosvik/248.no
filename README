@@ -10,6 +10,10 @@ Welcome to 248.no!
 │   │   "A static string analyzer"
 │   └── github.com/rosvik/string.248.no
 │
+├── cve.248.no/
+│   │   "A CVE lookup service"
+│   └── github.com/rosvik/cve.248.no
+│
 ├── ip.248.no/
 │   │   "A super simple site that returns your ip address"
 │   └── github.com/rosvik/tiny-ip
