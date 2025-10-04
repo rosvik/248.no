@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { formatId, toSlug } from '$lib/server/blog';
 	import type { PageProps } from './$types';
 	const { data }: PageProps = $props();
 </script>
@@ -12,8 +13,8 @@
 <ul>
 	{#each data.posts.toReversed() as post}
 		<li>
-			<pre>{post.id}</pre>
-			<a href={`/blog/${post.id}`}>
+			<pre>{formatId(post.id)} • {post.slugname}</pre>
+			<a href={`/blog/${toSlug(post.id, post.slugname)}`}>
 				<h2 class="title prose">{post.title}</h2>
 			</a>
 			<pre class="secondary-text">Published at {post.published}</pre>

@@ -1,16 +1,22 @@
 <script lang="ts">
 	import { marked } from 'marked';
 	import { page } from '$app/state';
-	import type { getBlogPost } from '$lib/server/blog';
+	import { formatId, type getBlogPost } from '$lib/server/blog';
+	import { error } from '@sveltejs/kit';
 
 	const post = page.data as ReturnType<typeof getBlogPost>;
+	if (!post) {
+		error(404, {
+			message: 'Post not found!!'
+		});
+	}
 </script>
 
 <svelte:head>
 	<title>{post.title} - 248.no</title>
 </svelte:head>
 
-<pre>{post.id}</pre>
+<pre>{formatId(post.id)} • {post.slugname}</pre>
 <h1 class="prose title">{post.title}</h1>
 
 <pre>By {post.author.name} on {post.published}
