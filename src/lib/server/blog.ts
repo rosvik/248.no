@@ -15,16 +15,21 @@ type BlogPost = {
 };
 
 export const getBlogPosts = (): BlogPost[] => {
-  const posts = fs.readdirSync(blogDir);
-  return posts
-    .map((post) => {
-      if (post.endsWith('.json')) {
-        const postData = JSON.parse(fs.readFileSync(path.join(blogDir, post), 'utf8'));
-        console.log(postData);
-        return postData;
-      }
-    })
-    .filter(isDefined);
+  try {
+    const posts = fs.readdirSync(blogDir);
+    return posts
+      .map((post) => {
+        if (post.endsWith('.json')) {
+          const postData = JSON.parse(fs.readFileSync(path.join(blogDir, post), 'utf8'));
+          console.log(postData);
+          return postData;
+        }
+      })
+      .filter(isDefined);
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 };
 
 export const getBlogPost = (id: string): BlogPost & { content: string } => {

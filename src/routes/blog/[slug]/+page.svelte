@@ -1,21 +1,22 @@
 <script lang="ts">
-	import type { PageProps } from './$types';
 	import { marked } from 'marked';
+	import { page } from '$app/state';
+	import type { getBlogPost } from '$lib/server/blog';
 
-	let { data }: PageProps = $props();
+	const post = page.data as ReturnType<typeof getBlogPost>;
 </script>
 
 <svelte:head>
-	<title>{data.title} - 248.no</title>
+	<title>{post.title} - 248.no</title>
 </svelte:head>
 
-<pre>{data.id}</pre>
-<h1 class="prose title">{data.title}</h1>
+<pre>{post.id}</pre>
+<h1 class="prose title">{post.title}</h1>
 
-<pre>By {data.author.name} on {data.published}
-Last updated {data.updated}</pre>
+<pre>By {post.author.name} on {post.published}
+Last updated {post.updated}</pre>
 
-<article class="prose">{@html marked(data.content)}</article>
+<article class="prose">{@html marked(post.content)}</article>
 
 <style>
 	article {

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
-	let { data }: PageProps = $props();
+	const { data }: PageProps = $props();
 </script>
 
 <svelte:head>
@@ -19,6 +19,9 @@
 			<pre class="secondary-text">Published at {post.published}</pre>
 		</li>
 	{/each}
+	{#if data.posts.length === 0}
+		<p>No posts here</p>
+	{/if}
 </ul>
 
 <style>
