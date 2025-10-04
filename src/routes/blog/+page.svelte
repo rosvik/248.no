@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formatId, toSlug } from '$lib/utils';
+	import { formatId, formatDate, toSlug } from '$lib/utils';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -19,7 +19,7 @@
 			<a href={`/blog/${toSlug(post.id, post.slugname)}`}>
 				<h2 class="title prose">{post.title}</h2>
 			</a>
-			<pre class="secondary-text">Published at {post.published}</pre>
+			<pre class="secondary-text">Published {formatDate(post.published)} by {post.author.name}</pre>
 		</li>
 	{/each}
 	{#if posts.length === 0}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { marked } from 'marked';
-	import { formatId } from '$lib/utils';
+	import { formatId, formatDate } from '$lib/utils';
 	import { error } from '@sveltejs/kit';
 	import type { PageData } from './$types';
 
@@ -19,8 +19,8 @@
 <pre>{formatId(data.id)} • {data.slugname}</pre>
 <h1 class="prose title">{data.title}</h1>
 
-<pre>By {data.author.name} on {data.published}
-{#if data.updated}Last updated {data.updated}{/if}</pre>
+<pre>Published {formatDate(data.published)} by {data.author.name}
+{#if data.updated}Last updated {formatDate(data.updated)}{/if}</pre>
 
 <article class="prose">{@html marked(data.content)}</article>
 
