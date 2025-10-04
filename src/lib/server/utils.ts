@@ -10,6 +10,3 @@ export const getIP = (request: Request) =>
   request.headers.get('via') ||
   request.headers.get('remote_addr') ||
   'UNKNOWN';
-
-export const isDefined = <T>(value: T): value is NonNullable<T> =>
-  value !== undefined && value !== null;

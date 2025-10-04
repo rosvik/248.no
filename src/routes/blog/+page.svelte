@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { formatId, toSlug } from '$lib/server/blog';
-	import type { PageProps } from './$types';
-	const { data }: PageProps = $props();
+	import { formatId, toSlug } from '$lib/utils';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+	const posts = data.posts;
 </script>
 
 <svelte:head>
@@ -11,7 +13,7 @@
 <h1 class="prose">Blog</h1>
 
 <ul>
-	{#each data.posts.toReversed() as post}
+	{#each posts.toReversed() as post}
 		<li>
 			<pre>{formatId(post.id)} • {post.slugname}</pre>
 			<a href={`/blog/${toSlug(post.id, post.slugname)}`}>
@@ -20,7 +22,7 @@
 			<pre class="secondary-text">Published at {post.published}</pre>
 		</li>
 	{/each}
-	{#if data.posts.length === 0}
+	{#if posts.length === 0}
 		<p>No posts here</p>
 	{/if}
 </ul>
