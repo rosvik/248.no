@@ -53,10 +53,10 @@ EOF
     background-color: var(--background);
     color: var(--text);
     font-family: 'Berkeley Mono', 'JetBrains Mono';
-  }
-  :global(pre) {
     width: 60ch;
     margin: auto;
+  }
+  :global(pre) {
     color: var(--secondary-text);
   }
   :global(span) {
@@ -72,5 +72,8 @@ EOF
   }
   :global(a:active) {
     color: var(--secondary-accent);
+  }
+  :global(.prose) {
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   }
 </style>
