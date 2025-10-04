@@ -10,7 +10,7 @@ export type BlogPost = {
   slug: string;
   title: string;
   published: string;
-  updated: string;
+  updated?: string;
   author: {
     name: string;
   };

@@ -20,7 +20,7 @@
 <h1 class="prose title">{data.title}</h1>
 
 <pre>By {data.author.name} on {data.published}
-Last updated {data.updated}</pre>
+{#if data.updated}Last updated {data.updated}{/if}</pre>
 
 <article class="prose">{@html marked(data.content)}</article>
 
