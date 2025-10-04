@@ -8,6 +8,10 @@
   export let year = data.year;
 </script>
 
+<svelte:head>
+	<title>248.no</title>
+</svelte:head>
+
 <pre>
 
 {date}
