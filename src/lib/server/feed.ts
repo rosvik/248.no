@@ -46,15 +46,13 @@ export const generateFeed = async (posts: BlogPost[]): Promise<string> => {
 };
 
 export const lastUpdated = (posts: BlogPost[]): Date => {
-  return (
-    posts.reduce(
-      (max, post) => {
-        return new Date(post.updated || post.published).getTime() > max.getTime()
-          ? new Date(post.updated || post.published)
-          : max;
-      },
-      new Date(posts[0].updated || posts[0].published)
-    ) || new Date()
+  if (posts.length === 0) return new Date();
+  return posts.reduce(
+    (max, post) => {
+      const date = new Date(post.updated || post.published);
+      return date.getTime() > max.getTime() ? date : max;
+    },
+    new Date(posts[0].updated || posts[0].published)
   );
 };
 
