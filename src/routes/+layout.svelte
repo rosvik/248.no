@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>248.no</title>
+  <title>248.no</title>
 </svelte:head>
 
 <pre>
@@ -75,5 +75,31 @@ EOF
   }
   :global(.prose) {
     font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  }
+  :global(ul, ol) {
+    padding-left: 2ch;
+  }
+  :global(ul li) {
+    margin: 1ch 0;
+    list-style-type: "* ";
+  }
+  :global(ol li) {
+    margin: 1ch 0;
+    list-style-type: numbers;
+  }
+  :global(li::marker) {
+    font-family: 'Berkeley Mono', 'JetBrains Mono';
+    color: var(--secondary-text);
+  }
+  :global(ol li::marker) {
+    content: counter(list-item) " ";
+  }
+  :global(blockquote) {
+    border-left: 2px solid var(--secondary-text);
+    padding: 0 calc(2ch - 2px);
+    margin: 1ch 0;
+  }
+  :global(article p, article li) {
+    line-height: 1.5em;
   }
 </style>
