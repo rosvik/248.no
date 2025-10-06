@@ -11,6 +11,7 @@
 </svelte:head>
 
 <h1 class="prose">Blog</h1>
+<pre><a href="/blog/rss.xml">RSS</a></pre>
 
 <ul>
 	{#each posts.toReversed() as post}
@@ -28,6 +29,9 @@
 </ul>
 
 <style>
+	h1 {
+		margin-bottom: .25ch;
+	}
 	ul {
 		padding-left: 0;
 	}
