@@ -10,10 +10,9 @@ export const getBlogPosts = (): BlogPost[] => {
     return posts
       .map((post) => {
         if (post.endsWith('.json')) {
-          let match = fromSlug(post.slice(0, -5));
-          if (match) {
-            const postData = JSON.parse(fs.readFileSync(path.join(blogDir, post), 'utf8'));
-            return { ...postData, ...match };
+          const slug = post.slice(0, -5);
+          if (slug) {
+            return getBlogPost(slug);
           }
         }
       })
@@ -24,7 +23,7 @@ export const getBlogPosts = (): BlogPost[] => {
   }
 };
 
-export const getBlogPost = (slug: string): (BlogPost & { content: string }) | undefined => {
+export const getBlogPost = (slug: string): BlogPost | undefined => {
   const post = fs.readFileSync(path.join(blogDir, `${slug}.json`), 'utf8');
   const content = fs.readFileSync(path.join(blogDir, `${slug}.md`), 'utf8');
 

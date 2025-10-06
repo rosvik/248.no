@@ -14,6 +14,7 @@ export type BlogPost = {
   author: {
     name: string;
   };
+  content: string;
 };
 
 export const fromSlug = (slug: string): { id: number; slugname: string } | undefined => {
