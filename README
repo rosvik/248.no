@@ -31,9 +31,13 @@ Welcome to 248.no!
 │   │   "A site for generating QR codes"
 │   └── github.com/rosvik/qr.248.no
 │
-└── og.248.no/
-    │   "An API for fetching Open Graph data from websites"
-    └── github.com/rosvik/og.248.no
+├── og.248.no/
+│   │   "An API for fetching Open Graph data from websites"
+│   └── github.com/rosvik/og.248.no
+│
+└── thumbs.248.no/
+    │   "A proxy and archive of YouTube thumbnails"
+    └── github.com/rosvik/thumbs.248.no
 
 
 You can reach out on

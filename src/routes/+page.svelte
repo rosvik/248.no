@@ -32,9 +32,13 @@
 │   │   "A site for generating QR codes"
 │   └── <a href="https://github.com/rosvik/qr.248.no">github.com/rosvik/qr.248.no</a>
 │
-└── <span><a href="https://og.248.no">og.248.no/</a></span>
-    │   "An API for fetching Open Graph data from websites"
-    └── <a href="https://github.com/rosvik/og.248.no">github.com/rosvik/og.248.no</a>
+├── <span><a href="https://og.248.no">og.248.no/</a></span>
+│   │   "An API for fetching Open Graph data from websites"
+│   └── <a href="https://github.com/rosvik/og.248.no">github.com/rosvik/og.248.no</a>
+│
+└── <span><a href="https://thumbs.248.no">thumbs.248.no/</a></span>
+    │   "A proxy and archive for YouTube thumbnails"
+    └── <a href="https://github.com/rosvik/thumbs.248.no">github.com/rosvik/thumbs.248.no</a>
 
 
 <span>You can reach out on</span>
