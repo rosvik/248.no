@@ -33,7 +33,7 @@ EOF
 
 <style>
   @font-face {
-    font-family: "JetBrains Mono";
+    font-family: 'JetBrains Mono';
     src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -81,7 +81,7 @@ EOF
   }
   :global(ul li) {
     margin: 1ch 0;
-    list-style-type: "* ";
+    list-style-type: '* ';
   }
   :global(ol li) {
     margin: 1ch 0;
@@ -92,7 +92,7 @@ EOF
     color: var(--secondary-text);
   }
   :global(ol li::marker) {
-    content: counter(list-item) " ";
+    content: counter(list-item) ' ';
   }
   :global(blockquote) {
     border-left: 2px solid var(--secondary-text);

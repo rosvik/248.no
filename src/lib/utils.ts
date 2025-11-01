@@ -18,8 +18,8 @@ export type BlogPost = {
 };
 
 export const fromSlug = (slug: string): { id: number; slugname: string } | undefined => {
-  let regex = /(\d+)-(.+)/;
-  let match = slug.match(regex);
+  const regex = /(\d+)-(.+)/;
+  const match = slug.match(regex);
   if (match) {
     return { id: parseInt(match[1]), slugname: match[2] };
   }
@@ -34,6 +34,6 @@ export const formatId = (id: number): string => {
 };
 
 export const formatDate = (date: string): string => {
-  let d = new Date(date);
+  const d = new Date(date);
   return `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getDate().toString().padStart(2, '0')}`;
 };

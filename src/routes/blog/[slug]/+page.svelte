@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { marked } from 'marked';
-	import { formatId, formatDate } from '$lib/utils';
-	import { error } from '@sveltejs/kit';
-	import type { PageData } from './$types';
+  import { marked } from 'marked';
+  import { formatId, formatDate } from '$lib/utils';
+  import { error } from '@sveltejs/kit';
+  import type { PageData } from './$types';
 
-	export let data: PageData;
-	if (data.id === undefined) {
-		error(404, {
-			message: 'Post not found!!'
-		});
-	}
+  export let data: PageData;
+  if (data.id === undefined) {
+    error(404, {
+      message: 'Post not found!!'
+    });
+  }
 </script>
 
 <svelte:head>
-	<title>{data.title} - 248.no</title>
+  <title>{data.title} - 248.no</title>
 </svelte:head>
 
 <pre>{formatId(data.id)} • {data.slugname}</pre>
@@ -25,14 +25,14 @@
 <article class="prose">{@html marked(data.content)}</article>
 
 <style>
-	article {
-		margin: 3ch 0;
-		text-wrap-style: pretty;
-	}
-	pre {
-		margin: 0;
-	}
-	.title {
-		margin: .25ch 0;
-	}
+  article {
+    margin: 3ch 0;
+    text-wrap-style: pretty;
+  }
+  pre {
+    margin: 0;
+  }
+  .title {
+    margin: 0.25ch 0;
+  }
 </style>
