@@ -6,6 +6,7 @@
   export let host = data.host;
   export let ip = data.ip;
   export let year = data.year;
+  export let breadcrumbs = data.breadcrumbs;
 </script>
 
 <svelte:head>
@@ -17,7 +18,9 @@
 {date}
 {#if host && ip}Serving {host} to {ip}{/if}
 {#if hash}On commit <a href={`https://github.com/rosvik/248.no/commit/${hash}`}>{hash}</a>{/if}
-
+{#if breadcrumbs.length > 0}
+<a href="/">248.no</a> {#each breadcrumbs as b}> <a href={b.url}>{b.name}</a> {/each}
+{/if}
 
 </pre>
 <slot />
