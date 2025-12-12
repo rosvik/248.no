@@ -1,23 +1,20 @@
-FROM node:22-alpine AS builder
-
-WORKDIR /app
-COPY package.json .
-COPY package-lock.json .
-RUN npm ci
-COPY . .
-RUN npm run build
-RUN npm prune --production
-
-FROM node:22-alpine
-ARG COMMIT_HASH
-WORKDIR /app
-COPY --from=builder /app/build build/
-COPY --from=builder /app/node_modules node_modules/
-COPY package.json .
-
+FROM node:22-alpine AS base
+# ENV PNPM_HOME="/pnpm"
+# ENV PATH="$PNPM_HOME:$PATH"
 ENV NODE_ENV=production
+ENV CI=true
+WORKDIR /app
+
+FROM base AS build
+RUN corepack enable
+COPY . ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm run build
+
+FROM base
+COPY --from=build /app/build build/
+COPY --from=build /app/node_modules node_modules/
 ENV COMMIT_HASH=$COMMIT_HASH
 ENV PORT=2330
-
 EXPOSE 2330
 CMD [ "node", "build" ]
