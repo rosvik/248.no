@@ -1,6 +1,6 @@
 FROM node:22-alpine AS base
-# ENV PNPM_HOME="/pnpm"
-# ENV PATH="$PNPM_HOME:$PATH"
+ARG COMMIT_HASH
+ENV COMMIT_HASH=$COMMIT_HASH
 ENV NODE_ENV=production
 ENV CI=true
 WORKDIR /app
@@ -14,7 +14,6 @@ RUN pnpm run build
 FROM base
 COPY --from=build /app/build build/
 COPY --from=build /app/node_modules node_modules/
-ENV COMMIT_HASH=$COMMIT_HASH
 ENV PORT=2330
 EXPOSE 2330
 CMD [ "node", "build" ]
