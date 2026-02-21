@@ -58,8 +58,9 @@ EOF
     font-family: 'Berkeley Mono', 'JetBrains Mono';
     width: 60ch;
     margin: auto;
+    padding-bottom: 16ch;
   }
-  :global(pre) {
+  :global(pre), :global(code) {
     color: var(--secondary-text);
   }
   :global(span) {
