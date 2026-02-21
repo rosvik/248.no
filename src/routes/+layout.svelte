@@ -5,8 +5,8 @@
   export let date = data.date;
   export let host = data.host;
   export let ip = data.ip;
-  export let year = data.year;
   export let breadcrumbs = data.breadcrumbs;
+  export let license = data.license;
 </script>
 
 <svelte:head>
@@ -27,9 +27,7 @@
 <pre>
 
 
-Copyleft 2018-{year} Johannes Røsvik (<a href="https://github.com/rosvik/248.no/blob/master/LICENSE"
-    >AGPL-3.0</a
-  >).
+{license.description} (<a href={license.url}>{license.name}</a>).
 
 EOF
 </pre>
