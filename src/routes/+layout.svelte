@@ -27,7 +27,7 @@
 <pre>
 
 
-{license.description} (<a href={license.url}>{license.name}</a>).
+{license.description}{#if 'url' in license} (<a href={license.url}>{license.name}</a>){/if}
 
 EOF
 </pre>

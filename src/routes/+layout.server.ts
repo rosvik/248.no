@@ -1,5 +1,6 @@
 import { getIP } from '$lib/server/utils';
 import { getBlogPost } from '$lib/server/blog';
+import type { BlogPost } from '$lib/utils.js';
 
 const defaultLicense = {
   name: 'AGPL-3.0',
@@ -20,7 +21,7 @@ export const load = ({ request }) => {
     console.warn(e);
   }
 
-  let license = defaultLicense;
+  let license: BlogPost['license'] = defaultLicense;
   const blogMatch = url.pathname.match(/^\/blog\/([^/]+)\/?$/);
   if (blogMatch) {
     try {

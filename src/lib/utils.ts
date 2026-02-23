@@ -14,6 +14,15 @@ export type BlogPost = {
   author: {
     name: string;
   };
+  license:
+    | {
+        description: string;
+      }
+    | {
+        description: string;
+        name: string;
+        url: string;
+      };
   content: string;
 };
 
