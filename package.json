@@ -32,6 +32,7 @@
   "type": "module",
   "dependencies": {
     "feed": "^5.2.0",
+    "gray-matter": "^4.0.3",
     "marked": "^16.4.2"
   },
   "engines": {
