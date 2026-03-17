@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fromSlug, isDefined, toSlug, type BlogPost } from '../utils';
+import matter from 'gray-matter';
 
 const blogDir = path.resolve(process.cwd(), 'blog');
 
@@ -24,16 +25,18 @@ export const getBlogPosts = (): BlogPost[] => {
 };
 
 export const getBlogPost = (slug: string): BlogPost | undefined => {
-  const post = fs.readFileSync(path.join(blogDir, `${slug}.json`), 'utf8');
-  const content = fs.readFileSync(path.join(blogDir, `${slug}.md`), 'utf8');
+  const file = fs.readFileSync(path.join(blogDir, `${slug}.md`), 'utf8');
+  const { data, content } = matter(file);
 
   const match = fromSlug(slug);
   if (!match) return undefined;
+  const { id, slugname } = match;
 
   return {
-    ...JSON.parse(post),
-    ...match,
-    slug: toSlug(match.id, match.slugname),
+    ...(data as Omit<BlogPost, 'id' | 'slugname' | 'slug' | 'content'>),
+    id,
+    slugname,
+    slug: toSlug(id, slugname),
     content
   };
 };
