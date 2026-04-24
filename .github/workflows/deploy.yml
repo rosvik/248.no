@@ -10,7 +10,7 @@ jobs:
     outputs:
       hash: ${{ steps.hash.outputs.hash }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Get commit hash
         id: hash
         run: echo "hash=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
