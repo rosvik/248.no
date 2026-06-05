@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import { formatId, formatDate, toSlug } from '$lib/utils';
   import type { PageData } from './$types';
 
@@ -11,13 +12,13 @@
 </svelte:head>
 
 <h1 class="prose">Blog</h1>
-<pre><a href="/blog/rss.xml">RSS</a></pre>
+<pre><a href={resolve("/blog/rss.xml")}>RSS</a></pre>
 
 <ul>
-  {#each posts.toReversed() as post}
+  {#each posts.toReversed() as post (post.slug)}
     <li>
       <pre>{formatId(post.id)} • {post.slugname}</pre>
-      <a href={`/blog/${toSlug(post.id, post.slugname)}`}>
+      <a href={resolve(`/blog/${toSlug(post.id, post.slugname)}`)}>
         <h2 class="title prose">{post.title}</h2>
       </a>
       <pre class="secondary-text">Published {formatDate(post.published)} by {post.author.name}</pre>

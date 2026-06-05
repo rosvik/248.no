@@ -1,12 +1,13 @@
 <script lang="ts">
   import type { PageData } from './$types';
+  import { resolve } from "$app/paths";
   export let data: PageData;
-  export let hash = data.hash;
-  export let date = data.date;
-  export let host = data.host;
-  export let ip = data.ip;
-  export let breadcrumbs = data.breadcrumbs;
-  export let license = data.license;
+  const hash = data.hash;
+  const date = data.date;
+  const host = data.host;
+  const ip = data.ip;
+  const breadcrumbs = data.breadcrumbs;
+  const license = data.license;
 </script>
 
 <svelte:head>
@@ -19,7 +20,7 @@
 {#if host && ip}Serving {host} to {ip}{/if}
 {#if hash}On commit <a href={`https://github.com/rosvik/248.no/commit/${hash}`}>{hash}</a>{/if}
 {#if breadcrumbs.length > 0}
-<a href="/">248.no</a> {#each breadcrumbs as b}> <a href={b.url}>{b.name}</a> {/each}
+<a href={resolve("/")}>248.no</a> {#each breadcrumbs as b (b.url)} <a href={b.url} rel="external">{b.name}</a> {/each}
 {/if}
 
 </pre>
@@ -27,7 +28,7 @@
 <pre>
 
 
-{license.description}{#if 'url' in license} (<a href={license.url}>{license.name}</a>){/if}
+{license.description}{#if 'url' in license} (<a href={license.url} rel="external">{license.name}</a>){/if}
 
 EOF
 </pre>

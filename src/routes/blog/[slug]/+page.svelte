@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable svelte/no-at-html-tags */
   import { marked } from 'marked';
   import { formatId, formatDate } from '$lib/utils';
   import { error } from '@sveltejs/kit';

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import { page } from '$app/state';
 </script>
 
@@ -43,5 +44,5 @@ case, there's no need to feel bad about it. Either way,
 we're sorry for the inconvenience, and hope you have a great
 rest of your day :)
 
-<a href="/">Click here to get out of here</a>
+<a href={resolve("/")}>Click here to get out of here</a>
 </pre>
