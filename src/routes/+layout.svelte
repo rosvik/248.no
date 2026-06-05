@@ -26,8 +26,10 @@
 </pre>
 {/if}
 
-<br />
-<br />
+<pre>
+
+
+</pre>
 
 <slot />
 <pre>
