@@ -8,6 +8,10 @@ export type BlogPost = {
   slugname: string;
   /** Slug of the post. For post "0000-hello-world.json", the slug is "0000-hello-world". */
   slug: string;
+  content: string;
+} & FrontMatter;
+
+export type FrontMatter = {
   title: string;
   published: string;
   updated?: string;
@@ -23,7 +27,6 @@ export type BlogPost = {
         name: string;
         url: string;
       };
-  content: string;
 };
 
 export const fromSlug = (slug: string): { id: number; slugname: string } | undefined => {
