@@ -14,6 +14,7 @@ RUN pnpm run build
 FROM base
 COPY --from=build /app/build build/
 COPY --from=build /app/node_modules node_modules/
+COPY --from=build /app/blog blog/
 ENV PORT=2330
 EXPOSE 2330
 CMD [ "node", "build" ]
