@@ -31,9 +31,11 @@
   },
   "type": "module",
   "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "feed": "^5.2.1",
     "gray-matter": "^4.0.3",
-    "marked": "^16.4.2"
+    "marked": "^16.4.2",
+    "satori": "^0.26.0"
   },
   "engines": {
     "node": "24"

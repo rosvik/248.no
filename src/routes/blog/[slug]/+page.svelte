@@ -22,6 +22,12 @@
   <meta property="twitter:title" content={data.title} />
   <meta property="og:url" content={page.url.href} />
   <meta property="og:site_name" content="248.no" />
+  <meta property="og:image" content={`${page.url.origin}/blog/${data.slug}/og.png`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={data.title} />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:image" content={`${page.url.origin}/blog/${data.slug}/og.png`} />
   <meta property="article:published_time" content={new Date(data.published).toISOString()} />
   {#if data.updated}<meta property="article:modified_time" content={new Date(data.updated).toISOString()} />{/if}
   <meta property="article:author" content={data.author.name} />
