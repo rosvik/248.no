@@ -19,11 +19,16 @@
 {date}
 {#if host && ip}Serving {host} to {ip}{/if}
 {#if hash}On commit <a href={`https://github.com/rosvik/248.no/commit/${hash}`}>{hash}</a>{/if}
+</pre>
 {#if breadcrumbs.length > 0}
+<pre>
 <a href={resolve("/")}>248.no</a> {#each breadcrumbs as b (b.url)} <a href={b.url} rel="external">{b.name}</a> {/each}
+</pre>
 {/if}
 
-</pre>
+<br />
+<br />
+
 <slot />
 <pre>
 
@@ -48,6 +53,7 @@ EOF
     --secondary-accent: #85eea7;
     --prose-font: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
     --mono-font: 'Berkeley Mono', 'JetBrains Mono';
+    --font-size: min(13px, calc(100cqw / 38));
   }
   :global(::selection) {
     background: var(--secondary-accent);
@@ -57,12 +63,17 @@ EOF
     background-color: var(--background);
     color: var(--text);
     font-family: var(--mono-font);
-    width: 60ch;
+    width: min(60ch, calc(100% - 4ch));
     margin: auto;
     padding-bottom: 16ch;
+    container-type: inline-size;
   }
   :global(pre), :global(code) {
     color: var(--secondary-text);
+  }
+  :global(pre) {
+    font-size: var(--font-size);
+    overflow-x: auto;
   }
   :global(span) {
     color: var(--text);
@@ -80,6 +91,7 @@ EOF
   }
   :global(.prose) {
     font-family: var(--prose-font);
+    overflow-wrap: break-word;
   }
   :global(ul, ol) {
     padding-left: 2ch;
