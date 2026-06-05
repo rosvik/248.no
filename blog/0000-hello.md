@@ -1,6 +1,6 @@
 ---
 title: Hello world!
-published: 2026-06-05T00:00:00.000Z
+published: 2026-06-05T13:43:00.000+02:00
 author:
   name: Johannes Røsvik
 license:

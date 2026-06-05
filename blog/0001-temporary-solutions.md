@@ -1,6 +1,6 @@
 ---
 title: Nothing is so temporary as someone else's solution
-published: 2026-06-05T16:00:00.000Z
+published: 2026-06-05T16:12:00.000+02:00
 author:
   name: Johannes Røsvik
 license:
