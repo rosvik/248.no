@@ -1,3 +1,12 @@
+<script lang="ts">
+  import { resolve } from "$app/paths";
+  import BlogLinks from "../components/BlogLinks.svelte";
+  import type { PageData } from './$types';
+
+  export let data: PageData;
+  const posts = data.posts;
+</script>
+
 <pre>
 <span>Welcome to 248.no!</span>
 
@@ -41,6 +50,15 @@
     └── <a href="https://github.com/rosvik/thumbs.248.no">github.com/rosvik/thumbs.248.no</a>
 
 
+</pre>
+
+
+<h2 class="prose"><a href={resolve("/blog")}>Blog</a></h2>
+<BlogLinks posts={posts} />
+
+<pre>
+
+
 <span>You can reach out on</span>
 
  * <span>GitHub</span>:    <a href="https://github.com/rosvik">@rosvik</a>
@@ -50,3 +68,9 @@
   >
  * <span>LinkedIn</span>:  <a href="https://www.linkedin.com/in/rosvik/">@Johannes Røsvik</a>
 </pre>
+
+<style>
+    h2 {
+        margin: 0;
+    }
+</style>
