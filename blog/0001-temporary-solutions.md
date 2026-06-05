@@ -2,7 +2,7 @@
 title: Nothing is so temporary as someone else's solution
 published: 2026-06-05T16:00:00.000Z
 author:
-  name: Johannes T. Røsvik
+  name: Johannes Røsvik
 license:
   description: Copyright © 2026 Johannes Røsvik
 note: "This post was written by an actual human being. There are three R's in strawberry."
