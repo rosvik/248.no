@@ -22,7 +22,7 @@
 </pre>
 {#if breadcrumbs.length > 0}
 <pre>
-<a href={resolve("/")}>248.no</a> {#each breadcrumbs as b (b.url)} <a href={b.url} rel="external">{b.name}</a> {/each}
+<a href={resolve("/")}>248.no</a> {#each breadcrumbs as b (b.url)}&gt; <a href={b.url} rel="external">{b.name}</a> {/each}
 </pre>
 {/if}
 
