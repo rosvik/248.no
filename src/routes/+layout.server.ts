@@ -14,7 +14,7 @@ export const csr = false;
 
 export const load = ({ request }) => {
   let hash;
-  let url = new URL(request.url);
+  const url = new URL(request.url);
   try {
     hash = process.env.COMMIT_HASH || process.env.CF_PAGES_COMMIT_SHA || undefined;
   } catch (e) {

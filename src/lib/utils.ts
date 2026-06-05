@@ -27,6 +27,7 @@ export type FrontMatter = {
         name: string;
         url: string;
       };
+  note?: string;
 };
 
 export const fromSlug = (slug: string): { id: number; slugname: string } | undefined => {

@@ -25,6 +25,10 @@
 
 <article class="prose">{@html marked(data.content)}</article>
 
+{#if data.note}
+<p class="note">{data.note}</p>
+{/if}
+
 <style>
   article {
     margin: 3ch 0;
@@ -35,5 +39,15 @@
   }
   .title {
     margin: 0.25ch 0;
+  }
+  .note {
+    display: block;
+    /* margin: 4ch; */
+    font-size: 13px;
+    margin: 4ch 0 0 0;
+    color: var(--secondary-text);
+  }
+  .note::before {
+    content: "[i] ";
   }
 </style>

@@ -46,6 +46,8 @@ EOF
     --secondary-text: rgb(145, 145, 145);
     --accent: #fcee54;
     --secondary-accent: #85eea7;
+    --prose-font: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+    --mono-font: 'Berkeley Mono', 'JetBrains Mono';
   }
   :global(::selection) {
     background: var(--secondary-accent);
@@ -54,7 +56,7 @@ EOF
   :global(html) {
     background-color: var(--background);
     color: var(--text);
-    font-family: 'Berkeley Mono', 'JetBrains Mono';
+    font-family: var(--mono-font);
     width: 60ch;
     margin: auto;
     padding-bottom: 16ch;
@@ -77,7 +79,7 @@ EOF
     color: var(--secondary-accent);
   }
   :global(.prose) {
-    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+    font-family: var(--prose-font);
   }
   :global(ul, ol) {
     padding-left: 2ch;
