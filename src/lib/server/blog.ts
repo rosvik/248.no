@@ -10,8 +10,8 @@ export const getBlogPosts = (): BlogPost[] => {
     const posts = fs.readdirSync(blogDir);
     return posts
       .map((post) => {
-        if (post.endsWith('.json')) {
-          const slug = post.slice(0, -5);
+        if (post.endsWith('.md')) {
+          const slug = path.basename(post, '.md');
           if (slug) {
             return getBlogPost(slug);
           }
