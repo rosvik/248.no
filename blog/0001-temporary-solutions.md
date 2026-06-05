@@ -8,7 +8,7 @@ license:
 note: "This post was written by an actual human being. There are three R's in strawberry."
 ---
 
-I'm a bit of a hobby project-holic. For as long as I can remember, I've had some sort idea I've been tinkering with on the side, in addition to whatever I was supposed to be doing. I find it so satisfying to chase down that idea you got that one time you were doing something, and thought "I can make something better than this crap". I don't mind giving in to my better judgement, and start *scratching that itch*. So it's probably not a coincidence that several of my domains have renewal dates in the middle of exam season.
+I'm a bit of a hobby project-holic. For as long as I can remember, I've had some idea I've been tinkering with on the side, in addition to whatever I was supposed to be doing. I find it so satisfying to chase down that idea you got that one time you were doing something, and thought "I can make something better than this crap". I don't mind giving in to my better judgement, and start *scratching that itch*. So it's probably not a coincidence that several of my domains have renewal dates in the middle of exam season.
 
 As an example, I built a [QR code generator website](https://qr.248.no/) a while ago because the site I had used for years started to charge $5 for SVG exports. I know that $5 won't pay back the time I spent making it, but it turns out my stubbornness and spite don't need no funding.
 
