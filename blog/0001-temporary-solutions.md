@@ -1,6 +1,7 @@
 ---
 title: Nothing is so temporary as someone else's solution
 published: 2026-06-05T16:12:00.000+02:00
+updated: 2026-06-23T11:00:00.000+02:00
 author:
   name: Johannes Røsvik
 license:
@@ -46,6 +47,10 @@ But I can feel the itch. I want to do it on my own.
 ## Doing it myself
 
 Eventually, I came to the realisation that my hobby projects don't have to follow best practices. So a while back, I decided to scratch an itch I maybe shouldn't have. This rabbit hole was _deep_. I know that whatever Vercel is charging next year won't ever pay back the time I used to make it, but it turns out, my stubbornness and spite don't need no funding.
+
+So I went and made a container registry and a tool to automatically deploy Docker containers. Think docker registry plus a remotely controlled version of docker compose running on my VPS.
+
+Excuse me for a moment while I equip my turtleneck...
 
 ---
 
